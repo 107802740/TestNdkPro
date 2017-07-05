@@ -38,12 +38,11 @@ private String publicKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCmq72crbtK2CE/kp
         tv.setMovementMethod(ScrollingMovementMethod.getInstance());
         try {
             boolean flag=true;
-            String str ="中华人民共和国";
+            String str ="中华人民共和国1";
             if(flag){
                 str= "中华人民共和国\nThe pulbic of China\n";
             }
             String signStr = RSACoder.encryptBASE64(RSACoder.encryptByPublicKey(str.getBytes(), publicKey));
-            Log.d("Test",signStr);
             String afterStr = new String(RSACoder.decryptByPrivateKey(RSACoder.decryptBASE64(signStr), privateKey));
 
             String sign = RSACoder.sign(str.getBytes(), privateKey);
