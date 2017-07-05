@@ -1,0 +1,2 @@
+include ':FirstNdkApp'
+project(':FirstNdkApp').projectDir=new File('app')
